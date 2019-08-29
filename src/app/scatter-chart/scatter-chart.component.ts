@@ -3,6 +3,16 @@ import * as Highcharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
 import { Subscription, interval } from 'rxjs';
 
+declare var require: any;
+let Boost = require('highcharts/modules/boost');
+let noData = require('highcharts/modules/no-data-to-display');
+let More = require('highcharts/highcharts-more');
+
+Boost(Highcharts);
+noData(Highcharts);
+More(Highcharts);
+noData(Highcharts);
+
 @Component({
   selector: 'app-scatter-chart',
   templateUrl: './scatter-chart.component.html',
@@ -100,9 +110,9 @@ export class ScatterChartComponent implements OnInit {
         //     console.log( this.chartOptions.series[1]['data'])
         // })
         // console.log(typeof(this.chartOptions.series[1]['data']))
-        this.chartOptions.series[0]['data'] = updatedNormalData;
-        console.log(this.chartOptions.series[0]['data'])
+        this.chartOptions.series[0].data = updatedNormalData;
         this.chartOptions.series[1]['data'] = updatedAbnormalData;
+        console.log(this.chartOptions.series[0].data)
         // console.log(this.chartOptions.series[0]['data']);
         // console.log(this.chartOptions.series[1]['data']);
     }, error => {
