@@ -34,6 +34,11 @@ export class PieChartComponent implements OnInit {
             showInLegend: true
         }
     },
+    legend: {
+      align: 'center',
+      verticalAlign: 'bottom',
+      layout: 'horizontal'
+    },
     series: [{
       name: 'Brands',
       colorByPoint: true,
@@ -66,8 +71,34 @@ export class PieChartComponent implements OnInit {
   }
 
   onToggleLegend() {
-    console.log('legend is toggled!');
     this.chartOptions.plotOptions.pie.showInLegend = !this.chartOptions.plotOptions.pie.showInLegend;
-    console.log(this.chartOptions.plotOptions.pie.showInLegend)
+
+    // making angular to detect the changes
+    this.chartOptions = {
+      ...this.chartOptions
+    }
+  }
+
+  onLegendPosition() {
+    console.log('legend postion toggled');
+
+    if (this.chartOptions.legend.align === 'center')
+      this.chartOptions.legend = {
+        align: 'right',
+        verticalAlign: 'middle',
+        layout: 'vertical'
+      }
+    else {
+      this.chartOptions.legend = {
+        align: 'center',
+        verticalAlign: 'bottom',
+        layout: 'horizontal'
+      }
+    }
+
+    // making angular to detect the changes
+    this.chartOptions = {
+      ...this.chartOptions
+    }
   }
 }
