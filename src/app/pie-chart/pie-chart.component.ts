@@ -7,9 +7,10 @@ import * as Highcharts from 'highcharts';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
+
 export class PieChartComponent implements OnInit {
 
-  highcharts = Highcharts;
+  highcharts: typeof Highcharts = Highcharts;
   chartOptions = {   
     chart: {
       plotBackgroundColor: null,
@@ -39,8 +40,6 @@ export class PieChartComponent implements OnInit {
       data: [{
           name: 'Chrome',
           y: 61.41,
-          sliced: true,
-          selected: true
       }, {
           name: 'Internet Explorer',
           y: 11.84
@@ -62,7 +61,13 @@ export class PieChartComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
 
+  onToggleLegend() {
+    console.log('legend is toggled!');
+    this.chartOptions.plotOptions.pie.showInLegend = !this.chartOptions.plotOptions.pie.showInLegend;
+    console.log(this.chartOptions.plotOptions.pie.showInLegend)
+  }
 }

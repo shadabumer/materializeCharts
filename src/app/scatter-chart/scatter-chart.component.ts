@@ -77,44 +77,16 @@ export class ScatterChartComponent implements OnInit {
         const updatedNormalData = [];
         const updatedAbnormalData = [];
 
-        // const updated_normal_data = [];
-        // const updated_abnormal_data = [];
-        // console.log(data)
-        // for(let row of data) {
-        //   const temp_row = [
-        //     new Date(row.timestamp).getTime(),
-        //     row.value
-        //   ];
-        //   row.Normal === 1 ? updated_normal_data.push(temp_row) : updated_abnormal_data.push(temp_row);
-        // }
-
         Object.entries(data).forEach(row => {
-            // console.log(new Date(row[1].timestamp).getTime());
-            // console.log(row[1].value)
-            // console.log(row[1].Normal === 1)
             const tempRow = [
                 new Date(row[1].timestamp).getTime(),
                 row[1].value
             ];
             row[1].Normal === 1 ? updatedNormalData.push(tempRow) : updatedAbnormalData.push(tempRow);
         });
-        // console.log('updatedNormalData: ');
-        // updatedNormalData.forEach(arrayRow => {
-        //     // console.log(arrayRow);
-        //     this.chartOptions.series[0]['data'].push(arrayRow);
-        // });
-        // // console.log('updatedAbnormalData: ');
-        // updatedAbnormalData.forEach(arrayRow => {
-        //     // console.log(arrayRow);
-        //     this.chartOptions.series[1]['data'].push(arrayRow);
-        //     console.log( this.chartOptions.series[1]['data'])
-        // })
-        // console.log(typeof(this.chartOptions.series[1]['data']))
+
         this.chartOptions.series[0].data = updatedNormalData;
         this.chartOptions.series[1]['data'] = updatedAbnormalData;
-        console.log(this.chartOptions.series[0].data)
-        // console.log(this.chartOptions.series[0]['data']);
-        // console.log(this.chartOptions.series[1]['data']);
     }, error => {
         console.log('something went wrong: ' + error);
     }));
@@ -126,5 +98,4 @@ export class ScatterChartComponent implements OnInit {
           return res;
       });
   }
-
 }
