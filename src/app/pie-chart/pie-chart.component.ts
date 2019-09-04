@@ -80,22 +80,33 @@ export class PieChartComponent implements OnInit {
   }
 
   onLegendPosition() {
-    console.log('legend postion toggled');
-
     if (this.chartOptions.legend.align === 'center')
       this.chartOptions.legend = {
         align: 'right',
         verticalAlign: 'middle',
         layout: 'vertical'
-      }
+      }; 
     else {
       this.chartOptions.legend = {
         align: 'center',
         verticalAlign: 'bottom',
         layout: 'horizontal'
-      }
+      };
     }
 
+    // making angular to detect the changes
+    this.chartOptions = {
+      ...this.chartOptions
+    }
+  }
+/**
+ * This function adds the new slice into the pie chart, buth the value of name will be same for all the newly created slice.
+ * Value of y will be adjusted according to slices present in the chart.
+ * series[0] is used because, series is an array with only one element.
+ */
+  onAddSlice() {
+    this.chartOptions.series[0].data.push({name: 'new one', y: 10.01})
+    
     // making angular to detect the changes
     this.chartOptions = {
       ...this.chartOptions
