@@ -9,7 +9,7 @@
          </highcharts-chart>
          </div>
          <div class="card-action">
-         <button class="btn waves-effect waves-light" (click)="onToggleLegend()">Toggle Legend</button>
+         <button class="btn waves-effect waves-light" (click)="onToggleLegend()" (click)="isLegend=!isLegend">{{ isLegend ? "Hide" : "Show" }} Legend</button>
          <button class="btn waves-effect waves-light" (click)="onLegendPosition()">Toggle Legend Position</button>
          <button class="btn waves-effect waves-light" (click)="onAddSlice()">Add Slice</button>
          <button class="btn waves-effect waves-light" (click)="onRemoveSlice()">Remove Slice</button>

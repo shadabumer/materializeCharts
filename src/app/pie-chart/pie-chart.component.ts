@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -9,6 +10,9 @@ import * as Highcharts from 'highcharts';
 })
 
 export class PieChartComponent implements OnInit {
+
+  // to toggle legend button value i.e hide or show
+  isLegend: boolean = true;
 
   highcharts: typeof Highcharts = Highcharts;
   chartOptions = {   
@@ -105,7 +109,17 @@ export class PieChartComponent implements OnInit {
    * series[0] is used because, series is an array with only one element.
    */
   onAddSlice() {
-    this.chartOptions.series[0].data.push({name: 'new one', y: 10.01})
+    let sliceName: string, yValue: string | number;
+    do {
+      sliceName = prompt('slice name : ');
+      do {
+        yValue = prompt('percentage: ');
+      } while(yValue === "" || isNaN(parseInt(yValue)) || parseInt(yValue) < 0 ||  parseInt(yValue) >= 100 );
+    } while(sliceName === "" || sliceName === null);
+
+    console.log(`slice name: ${sliceName} \n y: ${yValue}`);
+    
+    this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
     
     // making angular to detect the changes
     this.chartOptions = {
