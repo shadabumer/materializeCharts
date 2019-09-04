@@ -85,8 +85,12 @@ export class ScatterChartComponent implements OnInit {
             row[1].Normal === 1 ? updatedNormalData.push(tempRow) : updatedAbnormalData.push(tempRow);
         });
 
-        this.chartOptions.series[0].data = updatedNormalData;
+        this.chartOptions.series[0]['data'] = updatedNormalData;
         this.chartOptions.series[1]['data'] = updatedAbnormalData;
+
+        this.chartOptions = {
+          ...this.chartOptions
+        }
     }, error => {
         console.log('something went wrong: ' + error);
     }));
