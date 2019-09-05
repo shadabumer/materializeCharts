@@ -8,7 +8,7 @@ button {
 }
 
 /**/
-#percentage::-webkit-inner-spin-button, 
+.modal .input-field #percentage::-webkit-inner-spin-button, 
 #percentage::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 

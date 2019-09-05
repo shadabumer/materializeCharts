@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +10,7 @@ import * as Highcharts from 'highcharts';
 })
 
 export class PieChartComponent implements OnInit {
-  // @ViewChild('f', {static: true}) signupForm: NgForm;
+  @ViewChild('sliceForm', {static: true}) sliceForm: NgForm;
 
   // to toggle legend button value i.e hide or show
   isLegend: boolean = true;
@@ -124,9 +125,26 @@ export class PieChartComponent implements OnInit {
     // this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
     
     // making angular to detect the changes
-
-
     console.log('add slice clicked!');
+    console.log(this.sliceForm);
+
+    // Object model that defines the new slice data
+    let addSlice: {sliceName: string, yValue: number} = {
+      sliceName: "",
+      yValue: 0
+    };
+
+    // Getting the user input from the slice form within the modal
+    addSlice.sliceName = this.sliceForm.value.sliceData.slicename;
+    addSlice.yValue = this.sliceForm.value.sliceData.percentage;
+
+    // Adding the new slice to the pie chart with given values
+    this.chartOptions.series[0].data.push({name: addSlice.sliceName, y: addSlice.yValue});
+    // Resetting the slice form
+    this.sliceForm.reset();
+
+    
+
     this.chartOptions = {
       ...this.chartOptions
     }
