@@ -11,6 +11,7 @@ import * as M from "materialize-css/dist/js/materialize";
 })
 
 export class PieChartComponent implements OnInit {
+  // @ViewChild helps us to access the local variable sliceForm in typescript
   @ViewChild('sliceForm', {static: true}) sliceForm: NgForm;
 
 
@@ -126,7 +127,7 @@ export class PieChartComponent implements OnInit {
     // this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
     
     // making angular to detect the changes
-    let instance = M.Modal.getInstance(document.querySelectorAll('.modal'));
+    // let instance = M.Modal.getInstance(document.querySelectorAll('.modal'));
 
     console.log('add slice clicked!');
     console.log(this.sliceForm);
@@ -148,7 +149,7 @@ export class PieChartComponent implements OnInit {
     // Resetting the slice form
     this.sliceForm.reset();
     
-    instance.close();
+    // instance.close();
 
 
     
