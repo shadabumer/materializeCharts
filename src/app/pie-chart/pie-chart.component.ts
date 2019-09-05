@@ -130,7 +130,6 @@ export class PieChartComponent implements OnInit {
     // let instance = M.Modal.getInstance(document.querySelectorAll('.modal'));
 
     console.log('add slice clicked!');
-    console.log(this.sliceForm);
 
     // Object model that defines the new slice data
     let addSlice: {sliceName: string, yValue: number} = {
@@ -146,6 +145,8 @@ export class PieChartComponent implements OnInit {
 
     // Adding the new slice to the pie chart with given values
     this.chartOptions.series[0].data.push({name: addSlice.sliceName, y: addSlice.yValue});
+    console.log(this.sliceForm);
+
     // Resetting the slice form
     this.sliceForm.reset();
     
