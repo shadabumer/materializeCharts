@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { NgForm } from '@angular/forms';
+import * as M from "materialize-css/dist/js/materialize";
 
 
 @Component({
@@ -11,6 +12,7 @@ import { NgForm } from '@angular/forms';
 
 export class PieChartComponent implements OnInit {
   @ViewChild('sliceForm', {static: true}) sliceForm: NgForm;
+
 
   // to toggle legend button value i.e hide or show
   isLegend: boolean = true;
@@ -70,11 +72,10 @@ export class PieChartComponent implements OnInit {
   };
 
   constructor() { }
-
-
+  
   ngOnInit() {
     const modal = document.querySelector('.modal');
-    M.Modal.init(modal, {});
+    let instances = M.Modal.init(modal, {});
   }
 
   onToggleLegend() {
@@ -125,6 +126,8 @@ export class PieChartComponent implements OnInit {
     // this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
     
     // making angular to detect the changes
+    let instance = M.Modal.getInstance(document.querySelectorAll('.modal'));
+
     console.log('add slice clicked!');
     console.log(this.sliceForm);
 
@@ -137,11 +140,16 @@ export class PieChartComponent implements OnInit {
     // Getting the user input from the slice form within the modal
     addSlice.sliceName = this.sliceForm.value.sliceData.slicename;
     addSlice.yValue = this.sliceForm.value.sliceData.percentage;
+    console.log(addSlice.sliceName);
+    console.log(addSlice.yValue);
 
     // Adding the new slice to the pie chart with given values
     this.chartOptions.series[0].data.push({name: addSlice.sliceName, y: addSlice.yValue});
     // Resetting the slice form
     this.sliceForm.reset();
+    
+    instance.close();
+
 
     
 
