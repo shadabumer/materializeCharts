@@ -6,3 +6,10 @@ highcharts-chart {
 button {
     margin: 0 1em 1em 0;
 }
+
+/**/
+#percentage::-webkit-inner-spin-button, 
+#percentage::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

@@ -28,7 +28,7 @@
               "src/assets/materialize/css/materialize.min.css"
             ],
             "scripts": [
-              "src/assets/materialize/js/materialize.min.js"
+              "src/assets/materialize/js/materialize.js"
             ]
           },
           "configurations": {

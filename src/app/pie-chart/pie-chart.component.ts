@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { stringify } from 'querystring';
 
 
 @Component({
@@ -10,6 +9,7 @@ import { stringify } from 'querystring';
 })
 
 export class PieChartComponent implements OnInit {
+  // @ViewChild('f', {static: true}) signupForm: NgForm;
 
   // to toggle legend button value i.e hide or show
   isLegend: boolean = true;
@@ -72,6 +72,8 @@ export class PieChartComponent implements OnInit {
 
 
   ngOnInit() {
+    const modal = document.querySelector('.modal');
+    M.Modal.init(modal, {});
   }
 
   onToggleLegend() {
@@ -109,19 +111,22 @@ export class PieChartComponent implements OnInit {
    * series[0] is used because, series is an array with only one element.
    */
   onAddSlice() {
-    let sliceName: string, yValue: string | number;
-    do {
-      sliceName = prompt('slice name : ');
-      do {
-        yValue = prompt('percentage: ');
-      } while(yValue === "" || isNaN(parseInt(yValue)) || parseInt(yValue) < 0 ||  parseInt(yValue) >= 100 );
-    } while(sliceName === "" || sliceName === null);
+    // let sliceName: string, yValue: string | number;
+    // do {
+    //   sliceName = prompt('slice name : ');
+    //   do {
+    //     yValue = prompt('percentage: ');
+    //   } while(yValue === "" || isNaN(parseInt(yValue)) || parseInt(yValue) < 0 ||  parseInt(yValue) >= 100 );
+    // } while(sliceName === "" || sliceName === null);
 
-    console.log(`slice name: ${sliceName} \n y: ${yValue}`);
+    // console.log(`slice name: ${sliceName} \n y: ${yValue}`);
     
-    this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
+    // this.chartOptions.series[0].data.push({name: sliceName, y: parseInt(yValue)})
     
     // making angular to detect the changes
+
+
+    console.log('add slice clicked!');
     this.chartOptions = {
       ...this.chartOptions
     }
