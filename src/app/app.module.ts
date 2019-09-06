@@ -4,6 +4,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { PieChartComponent } from './pie/pie-chart/pie-chart.component';
 import { AreaChartComponent } from './area/area-chart/area-chart.component';
@@ -35,7 +37,8 @@ import { DisplayLineComponent } from './line/display-line/display-line.component
     BrowserModule,
     HighchartsChartModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
             <!-- sidenav trigger button i.e hamburger button -->
                 <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a>
             <div class="container">
-                <a href="#!" class="brand-logo">{{ title }}</a>
+                <a routerLink="/" class="brand-logo">{{ title }}</a>
             </div>
         </div>
     </nav>
@@ -22,10 +22,20 @@
     <div class="section">
         <li><a class="subheader white-text"><h5>Charts</h5></a></li>
     
-        <li><a href="#" class="white-text">Pie Chart</a></li>
-        <li><a href="#" class="white-text">Line Chart</a></li>
-        <li><a href="#" class="white-text">Area Chart</a></li>
-        <li><a href="#" class="white-text">Column and Bar Chart</a></li>
-        <li><a href="#" class="white-text">Scatter and Bubble Chart</a></li>
+        <li routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">
+            <a href="#" class="white-text">Pie Chart</a>
+        </li>
+        <li  routerLinkActive="active" >
+            <a class="white-text" routerLink="/line-chart">Line Chart</a>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#" class="white-text">Area Chart</a>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#" class="white-text">Column and Bar Chart</a>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#" class="white-text">Scatter and Bubble Chart</a>
+        </li>
     </div>
 </ul>

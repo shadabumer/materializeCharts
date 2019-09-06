@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DisplayLineComponent } from './line/display-line/display-line.component';
 
+// Defining the routes
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'line-chart', component: DisplayLineComponent}
