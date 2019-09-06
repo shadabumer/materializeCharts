@@ -17,6 +17,9 @@ import { AjaxLoadedDataComponent } from './line/ajax-loaded-data/ajax-loaded-dat
 import { DataLabelsComponent } from './line/data-labels/data-labels.component';
 import { HomeComponent } from './home/home.component';
 import { DisplayLineComponent } from './line/display-line/display-line.component';
+import { DonutChartComponent } from './pie/donut-chart/donut-chart.component';
+import { DisplayPieComponent } from './pie/display-pie/display-pie.component';
+import { DrillDownPieComponent } from './pie/drill-down-pie/drill-down-pie.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { DisplayLineComponent } from './line/display-line/display-line.component
     DataLabelsComponent,
     HomeComponent,
     DisplayLineComponent,
+    DonutChartComponent,
+    DisplayPieComponent,
+    DrillDownPieComponent,
   ],
   imports: [
     BrowserModule,
