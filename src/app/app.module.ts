@@ -11,6 +11,8 @@ import { LineChartComponent } from './line/line-chart/line-chart.component';
 import { BarChartComponent } from './bar/bar-chart/bar-chart.component';
 import { ScatterChartComponent } from './scatter-and-bubble/scatter-chart/scatter-chart.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AjaxLoadedDataComponent } from './line/ajax-loaded-data/ajax-loaded-data.component';
+import { DataLabelsComponent } from './line/data-labels/data-labels.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BarChartComponent,
     ScatterChartComponent,
     NavbarComponent,
+    AjaxLoadedDataComponent,
+    DataLabelsComponent,
   ],
   imports: [
     BrowserModule,
