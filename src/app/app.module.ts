@@ -13,6 +13,8 @@ import { ScatterChartComponent } from './scatter-and-bubble/scatter-chart/scatte
 import { NavbarComponent } from './navbar/navbar.component';
 import { AjaxLoadedDataComponent } from './line/ajax-loaded-data/ajax-loaded-data.component';
 import { DataLabelsComponent } from './line/data-labels/data-labels.component';
+import { HomeComponent } from './home/home.component';
+import { DisplayLineComponent } from './line/display-line/display-line.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { DataLabelsComponent } from './line/data-labels/data-labels.component';
     NavbarComponent,
     AjaxLoadedDataComponent,
     DataLabelsComponent,
+    HomeComponent,
+    DisplayLineComponent,
   ],
   imports: [
     BrowserModule,
