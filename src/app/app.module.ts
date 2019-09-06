@@ -5,11 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
-import { AreaChartComponent } from './area-chart/area-chart.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
-import { ScatterChartComponent } from './scatter-chart/scatter-chart.component';
+import { PieChartComponent } from './pie/pie-chart/pie-chart.component';
+import { AreaChartComponent } from './area/area-chart/area-chart.component';
+import { LineChartComponent } from './line/line-chart/line-chart.component';
+import { BarChartComponent } from './bar/bar-chart/bar-chart.component';
+import { ScatterChartComponent } from './scatter-and-bubble/scatter-chart/scatter-chart.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ScatterChartComponent } from './scatter-chart/scatter-chart.component';
     LineChartComponent,
     BarChartComponent,
     ScatterChartComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
