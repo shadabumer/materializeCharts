@@ -1,15 +1,33 @@
-<div class="row">
-    <div class="col s12">
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper blue-grey darken-1">
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue-grey darken-1">
+                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a>
+
+            <div class="container">
                 <a href="#!" class="brand-logo">{{ title }}</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Highcharts</a></li>
-                </ul>
-                </div>
-            </nav>
+                <!-- <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a> -->
+            </div>
         </div>
-    </div>
+    </nav>
+    
 </div>
+
+<ul id="slide-out" class="sidenav blue-grey darken-1">
+    <div class="section">
+        <li><a href="#" class="white-text">About</a></li>
+        <li><a href="#" class="white-text">Highcharts</a></li>
+        <li><div class="divider"></div></li> 
+    </div>
+
+    <div class="section">
+        <li><a class="subheader white-text">Charts</a></li>
+    
+        <li><a href="#!" class="white-text">Pie Chart</a></li>
+        <li><a href="#!" class="white-text">Line Chart</a></li>
+        <li><a href="#!" class="white-text">Area Chart</a></li>
+        <li><a href="#!" class="white-text">Column and Bar Chart</a></li>
+        <li><a href="#!" class="white-text">Scatter and Bubble Chart</a></li>
+    </div>
+</ul>
