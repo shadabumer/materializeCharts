@@ -11,7 +11,6 @@ import { LineChartComponent } from './line/line-chart/line-chart.component';
 import { BarChartComponent } from './bar/bar-chart/bar-chart.component';
 import { ScatterChartComponent } from './scatter-and-bubble/scatter-chart/scatter-chart.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     BarChartComponent,
     ScatterChartComponent,
     NavbarComponent,
-    SidenavComponent,
   ],
   imports: [
     BrowserModule,
